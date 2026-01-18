@@ -25,20 +25,13 @@ const images = [
   }
 ];
 
+const gallery = document.querySelector('.gallery');
 
+const markup = images
+  .map((image) =>`<li><img src="${image.url}" alt="${image.alt}">'</li>`)
+  .join("");
 
-
-const elements = images.map((image) => { 
-    const gallery = document.querySelector(".gallery");
-    const listItem = document.createElement("li");
-    const img = document.createElement("img");
-
-    img.src = image.url;
-    img.alt = image.alt;
-
-    listItem.appendChild(img); 
-    gallery.appendChild(listItem);
-});
+gallery.innerHTML = markup;
 
 
 
