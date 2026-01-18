@@ -26,11 +26,20 @@ const images = [
 ];
 
 
-images.forEach(image => {
-    const gallery = document.querySelector('.gallery');
-    gallery.insertAdjacentHTML('beforeend', '<li><img></li>');
-    const galleryImage = gallery.lastElementChild.querySelector('img');
-    galleryImage.setAttribute('src', image.url);
-    galleryImage.setAttribute('alt', image.alt);
-    
- });
+
+
+const elements = images.map((image) => { 
+    const gallery = document.querySelector(".gallery");
+    const listItem = document.createElement("li");
+    const img = document.createElement("img");
+
+    img.src = image.url;
+    img.alt = image.alt;
+
+    listItem.appendChild(img); 
+    gallery.appendChild(listItem);
+});
+
+
+
+
