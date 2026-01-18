@@ -28,10 +28,10 @@ const images = [
 const gallery = document.querySelector('.gallery');
 
 const markup = images
-  .map((image) =>`<li><img src="${image.url}" alt="${image.alt}">'</li>`)
+  .map((image) =>`<li><img src="${image.url}" alt="${image.alt}"></li>`)
   .join("");
 
-gallery.innerHTML = markup;
+gallery.insertAdjacentHTML("beforeend", markup);
 
 
 
