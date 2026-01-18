@@ -5,13 +5,17 @@ function handleSubmit(event) {
     event.preventDefault();
 
     const form = event.currentTarget;
-    const email = form.elements.email.value;
-    const password = form.elements.password.value;
+    const email = form.elements.email.value.trim();
+    const password = form.elements.password.value.trim();
 
      if (email === "" || password === "") {
-    return console.log("All form fields must be filled in");
+    return alert("All form fields must be filled in");
   }
+    const formData = {
+        email: email,
+        password: password,
+    };
 
-  console.log(`Email: ${email}, Password: ${password}`);
+    console.log(formData);  
   form.reset();
  }
